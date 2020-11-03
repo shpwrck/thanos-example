@@ -1,0 +1,10 @@
+apiVersion: management.cattle.io/v3
+kind: Catalog
+metadata:
+  name: banzai
+spec:
+  branch: master
+  catalogKind: helm
+  description: ""
+  helmVersion: helm_v3
+  url: https://kubernetes-charts.banzaicloud.com

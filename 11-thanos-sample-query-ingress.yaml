@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: thanos-sample-query
+  namespace: cattle-prometheus
+spec:
+  rules:
+  - host: thanos-sample-query.cattle-prometheus.68.183.57.36.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: thanos-sample-query
+          servicePort: 10902
+        pathType: ImplementationSpecific
+

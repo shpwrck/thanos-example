@@ -1,0 +1,15 @@
+apiVersion: monitoring.banzaicloud.io/v1alpha1
+kind: StoreEndpoint
+metadata:
+  name: '01-thanos-nodeport'
+  namespace: cattle-prometheus
+spec:
+  config:
+    mountFrom:
+      secretKeyRef:
+        key: object-store.yaml
+        name: object-store-secret
+  selector: {}
+  thanos: thanos-sample
+  url: '68.183.57.36:30754'
+

@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: thanos-sidecar
+  namespace: cattle-prometheus
+spec:
+  rules:
+  - host: thanos-sidecar.cattle-prometheus.68.183.57.36.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: access-thanos
+          servicePort: 10902
+        path: /metrics
+        pathType: ImplementationSpecific
+  - host: thanos-sidecar.cattle-prometheus.68.183.57.36.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: access-thanos
+          servicePort: 10901
+        pathType: ImplementationSpecific
+

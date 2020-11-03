@@ -1,0 +1,9 @@
+apiVersion: monitoring.banzaicloud.io/v1alpha1
+kind: Thanos
+metadata:
+  name: thanos-sample
+  namespace: cattle-prometheus
+spec:
+  query: {}
+  rule: {}
+  storeGateway: {}

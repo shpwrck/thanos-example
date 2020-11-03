@@ -1,0 +1,13 @@
+apiVersion: monitoring.banzaicloud.io/v1alpha1
+kind: StoreEndpoint
+metadata:
+  name: storeendpoint-sample
+  namespace: cattle-prometheus
+spec:
+  config:
+    mountFrom:
+      secretKeyRef:
+        key: object-store.yaml
+        name: object-store-secret
+  selector: {}
+  thanos: thanos-sample

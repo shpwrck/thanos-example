@@ -1,0 +1,8 @@
+type: S3
+config:
+  endpoint: "s3.us-east-1.amazonaws.com"
+  bucket: "skrzypektest"
+  region: "us-east-1"
+  access_key: $ACCESS_KEY 
+  secret_key: $SECRET_KEY
+  insecure: true
