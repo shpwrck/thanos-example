@@ -11,4 +11,4 @@ spec:
   - /prometheus/monitoring
   repo: https://github.com/shpwrck/thanos-example
   targets:
-  - clusterGroup: thanos-clusters
+  - clusterSelector: {}
