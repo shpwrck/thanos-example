@@ -1,0 +1,11 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: ClusterGroup
+metadata:
+  name: thanos-clusters
+  namespace: fleet-default
+spec:
+  selector:
+    matchExpressions: []
+    matchLabels:
+      thanos.enabled: "true"
+type: fleet.cattle.io.clustergroup

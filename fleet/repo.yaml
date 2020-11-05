@@ -1,0 +1,14 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: thanos
+  namespace: fleet-default
+spec:
+  branch: v2.5
+  clientSecretName: null
+  paths:
+  - /prometheus/monitoring-crd
+  - /prometheus/monitoring
+  repo: https://github.com/shpwrck/thanos-example
+  targets:
+  - clusterGroup: thanos-clusters

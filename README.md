@@ -1,12 +1,22 @@
-# Steps to Deploy Thanos using (deprecated) Rancher Monitoring
+# Steps to Deploy Thanos using Rancher Monitoring
 
 # Step 0: Create s3 bucket to store metrics
 
-# Step 1: Deploy Prometheus
+# Step 1: Deploy Labelled Cluster
+
+`thanos.enabled=true`
+
+# Step 2: Deploy Fleet Resources
+
+* repo
+* group
+
+<!--
+# Step 2: Deploy Prometheus
 
 * Prometheus Extra Args: 00-prometheus-operator-values.conf
 * Nodeport: 01-prometheus-nodeport-svc.yaml
-<!--* Ingress: 02-prometheus-thanos-ingress.yaml-->
+* Ingress: 02-prometheus-thanos-ingress.yaml
 
 # Step 2: Deploy Thanos
 
@@ -34,3 +44,4 @@
 * Store Endpoint: 12-external-store-endpoint.yaml
 * Deploy Grafana: (From Library Catalog)
 * Add Datasource: URL from 11-thanos-sample-query-ingress.yaml
+-->
