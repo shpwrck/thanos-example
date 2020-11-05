@@ -12,6 +12,11 @@ helm:
           enabled: true
 diff:
   comparePatches:
+  - apiVersion: monitoring.coreos.com/v1
+    kind: Prometheus
+    name: rancher-monitoring-prometheus
+    operations:
+    - {"op":"remove", "/spec"}
   - apiVersion: admissionregistration.k8s.io/v1beta1
     kind: MutatingWebhookConfiguration
     name: rancher-monitoring-admission
