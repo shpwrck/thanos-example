@@ -60,9 +60,7 @@ spec:
         - --request-timeout=0
         - --log-level=trace
         - --registry=txt
-        env:
-        - name: EXTERNAL_DNS_TXT_OWNER_ID
-          value: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}
+        - --txt-owner-id={{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}
         envFrom:
         - secretRef:
             name: do-token
