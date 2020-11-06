@@ -21,6 +21,7 @@ diff:
     operations:
     - {"op":"remove", "path":"/spec/rules/0/host"}
     - {"op":"remove", "path":"/spec/rules/0/http/paths/0/path"}
+    - {"op":"remove", "path":"/spec/rules/0/http/paths/0/pathType"}
     - {"op":"remove", "path":"/spec/rules/0/http/paths/0/backend/serviceName"}
     - {"op":"remove", "path":"/spec/rules/0/http/paths/0/backend/servicePort"}
   - apiVersion: admissionregistration.k8s.io/v1beta1
