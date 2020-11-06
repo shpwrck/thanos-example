@@ -62,7 +62,7 @@ spec:
         - --registry=txt
         env:
         - name: EXTERNAL_DNS_TXT_OWNER_ID
-          value: "{{ .Values.global.fleet.clusterLabels.management.cattle.io\/cluster-name }}"
+          value: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}
         envFrom:
         - secretRef:
             name: do-token
