@@ -14,6 +14,11 @@ helm:
           image: 'quay.io/thanos/thanos:v0.16.0'
 diff:
   comparePatches:
+  - apiVersion: extensions/v1beta1
+    kind: Ingress
+    name: rancher-monitoring-thanos-gateway
+    operations:
+    - {"op":"remove", "path":"/spec/rules/0"}
   - apiVersion: admissionregistration.k8s.io/v1beta1
     kind: MutatingWebhookConfiguration
     name: rancher-monitoring-admission
