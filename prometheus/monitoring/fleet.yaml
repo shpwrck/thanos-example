@@ -8,7 +8,7 @@ helm:
       thanosIngress:
         enabled: true
         hosts:
-        - "example.domain" 
+        - "stores.thanos.skrzypek.us" 
       prometheusSpec:
         thanos:
           image: 'quay.io/thanos/thanos:v0.16.0'

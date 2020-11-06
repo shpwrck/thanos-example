@@ -57,6 +57,7 @@ spec:
         - --provider=digitalocean
         - --request-timeout=0
         - --log-level=trace
+        - --policy=create-only
         envFrom:
         - secretRef:
             name: do-token
