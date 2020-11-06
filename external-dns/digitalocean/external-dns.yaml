@@ -59,6 +59,7 @@ spec:
         - --provider=digitalocean
         - --request-timeout=0
         - --log-level=trace
+        - --registry=txt
         - --txt-owner-id=$HOSTNAME
         envFrom:
         - secretRef:
