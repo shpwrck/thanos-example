@@ -60,7 +60,7 @@ spec:
         - --request-timeout=0
         - --log-level=trace
         - --registry=txt
-        - --txt-owner-id={{ .Values.global.cattle.clusterId }}
+        - --txt-owner-id={{ .Values.global.fleet.clusterLabels.management\.cattle\.io/cluster-name }}
         envFrom:
         - secretRef:
             name: do-token
