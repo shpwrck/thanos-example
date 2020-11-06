@@ -17,6 +17,7 @@ diff:
   - apiVersion: extensions/v1beta1
     kind: Ingress
     name: rancher-monitoring-thanos-gateway
+    namespace: cattle-monitoring-system
     operations:
     - {"op":"remove", "path":"/spec/rules/0/host"}
     - {"op":"remove", "path":"/spec/rules/0/http/paths/0/path"}
