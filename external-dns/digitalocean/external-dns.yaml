@@ -59,7 +59,7 @@ spec:
         - --provider=digitalocean
         - --request-timeout=0
         - --log-level=trace
-        - --policy=create-only
+        - --txt-owner-id=$HOSTNAME
         envFrom:
         - secretRef:
             name: do-token
