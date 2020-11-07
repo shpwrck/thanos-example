@@ -8,10 +8,12 @@ helm:
       thanosIngress:
         enabled: true
         hosts:
-        - stores.thanos.{{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }}.demo.skrzypek.us
+        - "example.domain"
       prometheusSpec:
         thanos:
           image: 'quay.io/thanos/thanos:v0.16.0'
+kustomize:
+  dir: ./overlays/
 diff:
   comparePatches:
   - apiVersion: extensions/v1beta1

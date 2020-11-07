@@ -1,0 +1,2 @@
+patches:
+- thanos-ingress.yaml
