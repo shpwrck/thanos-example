@@ -1,1 +1,8 @@
-
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rancher-monitoring-thanos-gateway
+  namespace: cattle-monitoring-system
+spec:
+  rules:
+  - host: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }} 
