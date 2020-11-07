@@ -12,8 +12,6 @@ helm:
       prometheusSpec:
         thanos:
           image: 'quay.io/thanos/thanos:v0.16.0'
-kustomize:
-  dir: ./overlays/
 diff:
   comparePatches:
   - apiVersion: extensions/v1beta1
