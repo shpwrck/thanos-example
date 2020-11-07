@@ -8,11 +8,11 @@ helm:
       thanosIngress:
         enabled: true
         hosts:
-        - stores.thanos.{{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}.demo.skrzypek.us
+        - stores.thanos.{{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" | replace "-" "" }}.demo.skrzypek.us
         tls:
         - secretName: wildcard
           hosts:
-          - stores.thanos.{{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}.demo.skrzypek.us 
+          - stores.thanos.{{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" | replace "-" "" }}.demo.skrzypek.us 
       prometheusSpec:
         thanos:
           image: 'quay.io/thanos/thanos:v0.16.0'
