@@ -6,3 +6,12 @@ metadata:
 spec:
   rules:
   - host: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }} 
+    http:
+      paths:
+      - backend:
+          service:
+            name: rancher-monitoring-prometheus
+            port:
+              number: 10901
+        path: /
+        pathType: ImplementationSpecific

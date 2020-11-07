@@ -5,27 +5,11 @@ helm:
   chart: rancher-monitoring
   values:
     prometheus:
-      thanosIngress:
-        enabled: true
-        hosts:
-        - "example.domain"
       prometheusSpec:
         thanos:
           image: 'quay.io/thanos/thanos:v0.16.0'
-kustomize:
-  dir: ./overlays/
 diff:
   comparePatches:
-  - apiVersion: extensions/v1beta1
-    kind: Ingress
-    name: rancher-monitoring-thanos-gateway
-    namespace: cattle-monitoring-system
-    operations:
-    - {"op":"remove", "path":"/spec/rules/0/host"}
-    - {"op":"remove", "path":"/spec/rules/0/http/paths/0/path"}
-    - {"op":"remove", "path":"/spec/rules/0/http/paths/0/pathType"}
-    - {"op":"remove", "path":"/spec/rules/0/http/paths/0/backend/serviceName"}
-    - {"op":"remove", "path":"/spec/rules/0/http/paths/0/backend/servicePort"}
   - apiVersion: admissionregistration.k8s.io/v1beta1
     kind: MutatingWebhookConfiguration
     name: rancher-monitoring-admission
