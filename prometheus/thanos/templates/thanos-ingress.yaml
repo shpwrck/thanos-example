@@ -6,10 +6,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }}
+    - {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}.demo.skrzypek.us
     secretName: wildcard
   rules:
-  - host: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }} 
+  - host: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-name" }}.demo.skrzypek.us
     http:
       paths:
       - backend:
