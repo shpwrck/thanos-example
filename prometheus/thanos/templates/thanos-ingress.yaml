@@ -4,6 +4,10 @@ metadata:
   name: rancher-monitoring-thanos-gateway
   namespace: cattle-monitoring-system
 spec:
+  tls:
+  - hosts:
+    - {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }}
+    secretName: wildcard
   rules:
   - host: {{ index .Values "global" "fleet" "clusterLabels" "management.cattle.io/cluster-display-name" }} 
     http:
